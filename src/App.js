@@ -1,9 +1,15 @@
 import React, { useEffect, useState } from 'react';
-import { AppBar, Box, Button, Container, Grid, Paper, Stack, Toolbar, Typography } from '@mui/material';
-import { createTheme, ThemeProvider } from '@mui/material/styles';
-import CameraIcon from '@mui/icons-material/PhotoCamera';
+import { AppBar, Box, Button, Container, Grid, Link, Paper, Stack, Toolbar, Typography } from '@mui/material';
+import LinkedInIcon from '@mui/icons-material/LinkedIn';
+import GitHubIcon from '@mui/icons-material/GitHub';
+import { ThemeProvider, createTheme } from '@mui/material/styles';
+import CssBaseline from '@mui/material/CssBaseline';
 
-
+const darkTheme = createTheme({
+  palette: {
+    mode: 'dark',
+  },
+});
 //-----------------
 //Theme
 //-----------------
@@ -24,7 +30,8 @@ const theme = createTheme(
 // PAGE CONTENT
 //-----------------
 const App = () => {
-
+  //For Dark Mode
+  
   //-----------------
   // Setup UseState
   //-----------------
@@ -41,25 +48,25 @@ const App = () => {
   const showIntro = () => {
     setIntroVisible(true)
     setWorkExpVisible(false)
-    setSkillsVisible (false)
+    setSkillsVisible(false)
     setPortfolioVisible(false)
   }
   const showWorkExp = () => {
     setIntroVisible(false)
     setWorkExpVisible(true)
-    setSkillsVisible (false)
+    setSkillsVisible(false)
     setPortfolioVisible(false)
   }
   const showSkills = () => {
     setIntroVisible(false)
     setWorkExpVisible(false)
-    setSkillsVisible (true)
+    setSkillsVisible(true)
     setPortfolioVisible(false)
   }
   const showPortfolio = () => {
     setIntroVisible(false)
     setWorkExpVisible(false)
-    setSkillsVisible (false)
+    setSkillsVisible(false)
     setPortfolioVisible(true)
   }
 
@@ -82,13 +89,16 @@ const App = () => {
   }, [])
 
   return (
-    <ThemeProvider theme={theme}>
+    
+    <ThemeProvider theme={darkTheme}>
+      <CssBaseline/>
       <Container>
         <Paper>
           <AppBar position="static" sx={{ m: 2, ml: 0, p: 2, bgcolor: 'secondary' }}>
             <Toolbar>
-              <Typography variant="h4">Meet the Developer</Typography>
-              <Typography sx={{ p: 3 }} variant="h6"> Meko </Typography>
+              <Typography variant="h4">Meko Steinberg</Typography>
+              <Typography sx={{ m:1, p: 4 }} variant="h6"> Meet the Developer </Typography>
+             
             </Toolbar>
           </AppBar>
         </Paper>
@@ -153,9 +163,11 @@ const App = () => {
                 : theme.palette.grey[800],
           }}>
           <Container maxWidth="sm">
-            <Typography variant="body1">
+            <Typography variant="subtitle2">
               Brought to you by M.Steinberg
             </Typography>
+            <Link href="https://www.linkedin.com/in/mekosteinberg"><LinkedInIcon color="primary" fontSize="large" /></Link>
+            <Link href="https://github.com/mekosteinberg"><GitHubIcon color="primary" fontSize="large" /></Link>
           </Container>
         </Box>
       </Container>
