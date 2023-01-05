@@ -109,25 +109,15 @@ const App = () => {
             sx={{ bgcolor: 'background.paper', pt: 3, pb: 6 }}
           >
             <Container maxWidth="sm">
-              <Typography
-                component="h5"
-                variant="h5"
-                align="center"
-                color="text.primary"
-                gutterBottom
-              >Welcome to my Portfolio</Typography>
               <Stack sx={{ p: 2 }} direction="row" spacing={2} justifyContent="center" >
                 <Button variant={introVisible ? "contained" : "outlined"} onClick={showIntro}>Home</Button>
                 <Button variant={workExpVisible ? "contained" : "outlined"} onClick={showWorkExp}>Experience</Button>
                 <Button variant={skillsVisible ? "contained" : "outlined"} onClick={showSkills}>Skills </Button>
                 <Button variant={portfolioVisible ? "contained" : "outlined"} onClick={showPortfolio}>'Folio</Button>
-
               </Stack>
               <Typography variant="h6" align="center" color="text.secondary" paragraph>
                 Life changes quickly, and this makes organization of my past experiences, jobs and projects easier to see! Explore the various sections to find out more about my backround.
               </Typography>
-
-
             </Container>
           </Box>
           <Container maxWidth="md">
@@ -163,11 +153,13 @@ const App = () => {
                 : theme.palette.grey[800],
           }}>
           <Container maxWidth="sm">
-            <Typography variant="subtitle2">
-              Brought to you by M.Steinberg
-            </Typography>
-            <Link href="https://www.linkedin.com/in/mekosteinberg"><LinkedInIcon color="primary" fontSize="large" /></Link>
-            <Link href="https://github.com/mekosteinberg"><GitHubIcon color="primary" fontSize="large" /></Link>
+            <Stack sx={{ p: 2 }} direction="row" spacing={2} justifyContent="center">
+              <Link href="https://www.linkedin.com/in/mekosteinberg"><LinkedInIcon color="primary" fontSize="large" /></Link>
+              <Link href="https://github.com/mekosteinberg"><GitHubIcon color="primary" fontSize="large" /></Link>
+              <Typography variant="subtitle2">
+                Created by M.Steinberg
+              </Typography>
+            </Stack>
           </Container>
         </Box>
       </Container>
