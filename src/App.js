@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { AppBar, Box, Button, Container, Grid, Link, Paper, Stack, Toolbar, Typography } from '@mui/material';
+import { AppBar, Box, Button, Container, Divider, Grid, Link, Paper, Stack, Toolbar, Typography } from '@mui/material';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
@@ -31,7 +31,7 @@ const theme = createTheme(
 //-----------------
 const App = () => {
   //For Dark Mode
-  
+
   //-----------------
   // Setup UseState
   //-----------------
@@ -89,16 +89,16 @@ const App = () => {
   }, [])
 
   return (
-    
+
     <ThemeProvider theme={darkTheme}>
-      <CssBaseline/>
+      <CssBaseline />
       <Container>
         <Paper>
           <AppBar position="static" sx={{ m: 2, ml: 0, p: 2, bgcolor: 'secondary' }}>
             <Toolbar>
               <Typography variant="h4">Meko Steinberg</Typography>
-              <Typography sx={{ m:1, p: 4 }} variant="h6"> Meet the Developer </Typography>
-             
+              <Typography sx={{ m: 1, p: 4 }} variant="h6"> Meet the Developer </Typography>
+
             </Toolbar>
           </AppBar>
         </Paper>
@@ -117,14 +117,14 @@ const App = () => {
                 gutterBottom
               >Welcome to my Portfolio</Typography>
               <Stack sx={{ p: 2 }} direction="row" spacing={2} justifyContent="center" >
-                <Button variant={introVisible ? "contained" : "outlined"} onClick={showIntro}>Intro</Button>
-                <Button variant={workExpVisible ? "contained" : "outlined"} onClick={showWorkExp}>Work Exp</Button>
+                <Button variant={introVisible ? "contained" : "outlined"} onClick={showIntro}>Home</Button>
+                <Button variant={workExpVisible ? "contained" : "outlined"} onClick={showWorkExp}>Experience</Button>
                 <Button variant={skillsVisible ? "contained" : "outlined"} onClick={showSkills}>Skills </Button>
-                <Button variant={portfolioVisible ? "contained" : "outlined"} onClick={showPortfolio}>Portfolio</Button>
+                <Button variant={portfolioVisible ? "contained" : "outlined"} onClick={showPortfolio}>'Folio</Button>
 
               </Stack>
               <Typography variant="h6" align="center" color="text.secondary" paragraph>
-                Life changes quickly, and a portfolio makes organization of past experiences, jobs and projects easier to weed through, so WELCOME to mine! Explore the various sections to find out more about my backround, and check out my gallery below to see some of my favorite things!
+                Life changes quickly, and this makes organization of my past experiences, jobs and projects easier to see! Explore the various sections to find out more about my backround.
               </Typography>
 
 
